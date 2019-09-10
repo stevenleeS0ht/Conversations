@@ -44,3 +44,14 @@ proguard/
 
 import-summary.txt
 .navigation/
+
+# Signed package output
+/conversationsFreeCompat/
+/conversationsFreeSystem/
+/conversationsPlaystoreCompat/
+/conversationsPlaystoreSystem/
+/quicksyFreeCompact/
+/quicksyFreeSystem/
+/quicksyPlaystoreCompact/
+/quicksyPlaystoreSystem/
+
