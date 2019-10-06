@@ -2198,18 +2198,24 @@ public class XmppConnectionService extends Service {
 	}
 
 	public void deleteAccount(final Account account) {
+	    final boolean connected = account.getStatus() == Account.State.ONLINE;
 		synchronized (this.conversations) {
-			for (final Conversation conversation : conversations) {
-				if (conversation.getAccount() == account) {
-					if (conversation.getMode() == Conversation.MODE_MULTI) {
-						leaveMuc(conversation);
-					}
-					conversations.remove(conversation);
-					mNotificationService.clear(conversation);
-				}
-			}
+		    if (connected) {
+                account.getAxolotlService().deleteOmemoIdentity();
+            }
+            for (final Conversation conversation : conversations) {
+                if (conversation.getAccount() == account) {
+                    if (conversation.getMode() == Conversation.MODE_MULTI) {
+                        if (connected) {
+                            leaveMuc(conversation);
+                        }
+                    }
+                    conversations.remove(conversation);
+                    mNotificationService.clear(conversation);
+                }
+            }
 			if (account.getXmppConnection() != null) {
-				new Thread(() -> disconnect(account, true)).start();
+				new Thread(() -> disconnect(account, !connected)).start();
 			}
 			final Runnable runnable = () -> {
 				if (!databaseBackend.deleteAccount(account)) {
@@ -3770,11 +3776,11 @@ public class XmppConnectionService extends Service {
 
 
 	public void markMessage(Message message, int status, String errorMessage) {
-		final int c = message.getStatus();
-		if (status == Message.STATUS_SEND_FAILED && (c == Message.STATUS_SEND_RECEIVED || c == Message.STATUS_SEND_DISPLAYED)) {
+		final int oldStatus = message.getStatus();
+		if (status == Message.STATUS_SEND_FAILED && (oldStatus == Message.STATUS_SEND_RECEIVED || oldStatus == Message.STATUS_SEND_DISPLAYED)) {
 			return;
 		}
-		if (status == Message.STATUS_SEND_RECEIVED && c == Message.STATUS_SEND_DISPLAYED) {
+		if (status == Message.STATUS_SEND_RECEIVED && oldStatus == Message.STATUS_SEND_DISPLAYED) {
 			return;
 		}
 		message.setErrorMessage(errorMessage);
