@@ -18,12 +18,7 @@
 
 <p align="center">
     <a href="https://play.google.com/store/apps/details?id=eu.siacs.conversations&amp;referrer=utm_source%3Dgithub">
-       <img src="https://conversations.im/images/en-play-badge.png"
-            alt="Google Play">
-            </a>
-    <a href="http://www.amazon.com/dp/B00WD35AAC/">
-        <img src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonMobileApps/amazon-apps-store-us-black.png"
-             alt="Amazon App Store">
+       <img src="https://conversations.im/images/en-play-badge.png" alt="Google Play">
     </a>
 </p>
 
@@ -388,8 +383,6 @@ Read more about the concept on https://gultsch.de/trust.html
 
 #### What happened to OTR support?
 OTR was removed because it was highly unreliable. It didn’t work with multiple devices and was never really specified to work with XMPP. The codebase was a mess (There was an HTML parser in there for crying out loud to deal with the garbage some OTR clients would send.) Verification was implemented in a non-blocking way. It would tell you if the current session was using an unknown fingerprint but it didn’t actively stopped you from sending messages until you have confirmed the new fingerprint. (Like Conversations would do now with BTBV after verification or when BTBV is turned off.) Considering the previous points there was little to no desire from my point to fix this potential security issue or clean up the code base. Another reason for the removal was that people would use it *accidentally* even to communicate between two Conversations clients because they read somewhere that OTR is good.
-
-OTR is still available in [Conversations Legacy](https://github.com/siacs/Conversations/tree/legacy).
 
 ### What clients do I use on other platforms
 There are XMPP Clients available for all major platforms.
