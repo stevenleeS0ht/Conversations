@@ -155,6 +155,7 @@
   <string name="account_status_regis_conflict">Nazwa jest już w użyciu</string>
   <string name="account_status_regis_success">Zarejestrowano pomyślnie</string>
   <string name="account_status_regis_not_sup">Serwer nie umożliwia rejestracji</string>
+  <string name="account_status_regis_invalid_token">Nieprawidłowy żeton rejestracji</string>
   <string name="account_status_tls_error">Nie powiodła się negocjacja TLS</string>
   <string name="account_status_policy_violation">Naruszenie zasad</string>
   <string name="account_status_incompatible_server">Serwer niekompatybilny</string>
@@ -769,7 +770,6 @@ Administrator twojego serwera będzie mógł czytać twoje wiadomości, ale moż
   <string name="pref_more_notification_settings_summary">Ważność, Dźwięk, Wibracja</string>
   <string name="video_compression_channel_name">Kompresja wideo</string>
   <string name="view_media">Pokaż media</string>
-  <string name="view_users">Pokaż członków</string>
   <string name="group_chat_members">Uczestnicy</string>
   <string name="media_browser">Przeglądarka mediów</string>
   <string name="security_violation_not_attaching_file">Plik pominięty w związku z naruszeniem bezpieczeństwa.</string>
@@ -898,4 +898,10 @@ Administrator twojego serwera będzie mógł czytać twoje wiadomości, ale moż
   <string name="pref_channel_discovery">Metoda odkrywania kanałów</string>
   <string name="backup">Kopia zapasowa</string>
   <string name="category_about">O aplikacji</string>
+  <plurals name="view_users">
+    <item quantity="one">Pokaż %1$d uczestnika</item>
+    <item quantity="few">Pokaż %1$d uczestników</item>
+    <item quantity="many">Pokaż %1$d uczestników</item>
+    <item quantity="other">Pokaż %1$d uczestników</item>
+  </plurals>
 </resources>
