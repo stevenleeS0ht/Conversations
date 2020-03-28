@@ -236,7 +236,6 @@
   <string name="destroy_channel_dialog">Bist du sicher, dass du diesen öffentlichen Channel löschen willst?\n\n<b>Achtung:</b> Der Channel wird dabei vollständig auf dem Server gelöscht.</string>
   <string name="could_not_destroy_room">Gruppenchat konnte nicht gelöscht werden</string>
   <string name="could_not_destroy_channel">Channel konnte nicht gelöscht werden</string>
-  <string name="bookmark_already_exists">Die Konferenz befindet sich bereits auf deiner Kontaktliste</string>
   <string name="action_edit_subject">Gruppenchatthema bearbeiten</string>
   <string name="topic">Thema</string>
   <string name="joining_conference">Gruppenchat wird beigetreten…</string>
@@ -292,7 +291,8 @@
   <string name="conference_kicked">Du wurdest aus diesem Gruppchat geworfen</string>
   <string name="conference_shutdown">Gruppenchat wurde geschlossen</string>
   <string name="conference_unknown_error">Du bist nicht länger in diesem Gruppenchat</string>
-  <string name="using_account">Verwendetes Konto: %s</string>
+  <string name="using_account">verwende Konto %s</string>
+  <string name="hosted_on">gehostet bei %s</string>
   <string name="checking_x">%s auf HTTP-Host wird überprüft</string>
   <string name="not_connected_try_again">Nicht verbunden, bitte später versuchen</string>
   <string name="check_x_filesize">%s-Größe prüfen</string>

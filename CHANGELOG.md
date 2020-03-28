@@ -1,5 +1,15 @@
 # Changelog
 
+### Version 2.7.1
+
+* Fix avatar selection on some Android 10 devices
+* Fix file transfer for larger files
+
+### Version 2.7.0
+
+* Provide PDF preview on Android 5+
+* Use 12 byte IVs for OMEMO
+
 ### Version 2.6.4
 
 * Support automatic theme switching on Android 10

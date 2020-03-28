@@ -171,7 +171,7 @@ However you can disable the notification via settings of the operating system. (
 
 **The battery consumption and the entire behaviour of Conversations will remain the same (as good or as bad as it was before). Why is Google doing this to you? We have no idea.**
 
-##### Android &lt;= 7.1
+##### Android &lt;= 7.1 or Conversations from F-Droid (all Android versions)
 The foreground notification is still controlled over the expert settings within Conversations as it always has been. Whether or not you need to enable it depends on how aggressive the non-standard 'power saving' features are that your phone vendor has built into the operating system.
 
 ##### Android 8.x
@@ -197,7 +197,7 @@ FCM (Google Push) allows an app to wake up from *Doze* which is (as the name sug
 
 #### Conversations doesn’t work for me. Where can I get help?
 
-You can join our conference room on `conversations@conference.siacs.eu`.
+You can join our conference room on [`conversations@conference.siacs.eu`](https://conversations.im/j/conversations@conference.siacs.eu).
 A lot of people in there are able to answer basic questions about the usage of
 Conversations or can provide you with tips on running your own XMPP server. If
 you found a bug or your app crashes please read the Developer / Report Bugs
@@ -291,7 +291,7 @@ and introduce yourself to `iNPUTmice` so he can approve your join request.
 #### How do I backup / move Conversations to a new device?
 On the one hand Conversations supports Message Archive Management to keep a server side history of your messages so when migrating to a new device that device can display your entire history. However that does not work if you enable OMEMO due to its forward secrecy. (Read [The State of Mobile XMPP in 2016](https://gultsch.de/xmpp_2016.html) especially the section on encryption.)
 
-As of version 2.4.0 an integrated Backup & Restore function will help with this, go to Settings &#8594; Expert settings &#8594; Create backup. A notification will pop-up during the creation process that will announce you when it's ready. After the files, one for each account, are created, you can move the **Conversations** folder *(if you want your old media files too)* or only the **Conversations/Backup** folder *(for OMEMO keys and history only)* to your new device (or to a storage place) where a freshly installed Conversations can restore each account. Don't forget to enable the accounts after a succesful restore.
+As of version 2.4.0 an integrated Backup & Restore function will help with this, go to Settings and you’ll find a setting called Create backup. A notification will pop-up during the creation process that will announce you when it's ready. After the files, one for each account, are created, you can move the **Conversations** folder *(if you want your old media files too)* or only the **Conversations/Backup** folder *(for OMEMO keys and history only)* to your new device (or to a storage place) where a freshly installed Conversations can restore each account. Don't forget to enable the accounts after a succesful restore.
 
 This backup method will include your OMEMO keys. Due to forward secrecy you will not be able to recover messages sent and received between creating the backup and restoring it. If you have a server side archive (MAM) those messages will be retrieved but displayed as *unable to decrypt*. For technical reasons you might also lose the first message you either sent or receive after the restore; for each conversation you have. This message will then also show up as *unable to decrypt*, but this will automatically recover itself as long as both participants are on Conversations 2.3.11+. Note that this doesn’t happen if you just transfer to a new phone and no messages have been exchanged between backup and restore.
 
