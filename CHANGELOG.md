@@ -1,5 +1,20 @@
 # Changelog
 
+### Version 2.8.2
+
+* Add button to switch camea during video call
+* Fixed voice calls on tablets
+
+### Version 2.8.1
+
+* Audible feedback (dialing, call started, call ended) for voice calls.
+* Fixed issue with retrying failed video call
+
+### Version 2.8.0
+
+* Audio/Video calls (Requires server support in form of STUN and TURN servers discoverable via XEP-0215)
+
+
 ### Version 2.7.1
 
 * Fix avatar selection on some Android 10 devices

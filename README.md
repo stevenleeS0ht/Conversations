@@ -7,12 +7,9 @@
         <img src="https://inverse.chat/badge.svg?room=conversations@conference.siacs.eu"
              alt="chat on our conference room">
     </a>
-    <a href="https://travis-ci.org/siacs/Conversations">
-        <img src="https://travis-ci.org/siacs/Conversations.svg?branch=master"
+    <a href="https://travis-ci.org/inputmice/Conversations">
+        <img src="https://travis-ci.org/inputmice/Conversations.svg?branch=master"
              alt="build status">
-    </a>
-    <a href="https://bountysource.com/teams/siacs">
-        <img src="https://api.bountysource.com/badge/tracker?tracker_id=519483" alt="Bountysource">
     </a>
 </p>
 
@@ -22,7 +19,7 @@
     </a>
 </p>
 
-![screenshots](https://raw.githubusercontent.com/siacs/Conversations/master/screenshots.png)
+![screenshots](https://raw.githubusercontent.com/inputmice/Conversations/master/screenshots.png)
 
 ## Design principles
 
@@ -35,6 +32,7 @@
 
 * End-to-end encryption with [OMEMO](http://conversations.im/omemo/) or [OpenPGP](http://openpgp.org/about/)
 * Send and receive images as well as other kind of files
+* Make audio and video calls
 * Share your location
 * Send voice messages
 * Indication when your contact has read your message
@@ -318,7 +316,7 @@ merge it if I don't at least you and like minded people get to enjoy it.
 
 #### I need a feature and I need it now!
 
-I am available for hire. Contact me via XMPP: `inputmice@siacs.eu`
+I am available for hire. Find contact information on [my website](https://gultsch.de).
 
 ### Security
 
@@ -401,16 +399,22 @@ you can get access to the the latest beta version by signing up using [this link
 
 #### How do I build Conversations
 
+**Note:** Starting with version 2.8.0 you will need to compile libwebrtc.
+[Instructions](https://webrtc.github.io/webrtc-org/native-code/android/) can be found on the WebRTC
+website. Place the resulting libwebrtc.aar in the `libs/` directory. The PlayStore release currently
+uses the stable M81 release and renamed the file name to `libwebrtc-m81.aar` put potentially you can
+reference any file name by modifying `build.gradle`.
+
 Make sure to have ANDROID_HOME point to your Android SDK. Use the Android SDK Manager to install missing dependencies.
 
-    git clone https://github.com/siacs/Conversations.git
+    git clone https://github.com/inputmice/Conversations.git
     cd Conversations
     ./gradlew assembleConversationsFreeSystemDebug
 
 There are two build flavors available. *free* and *playstore*. Unless you know what you are doing you only need *free*.
 
 
-[![Build Status](https://travis-ci.org/siacs/Conversations.svg?branch=development)](https://travis-ci.org/siacs/Conversations)
+[![Build Status](https://travis-ci.org/inputmice/Conversations.svg?branch=development)](https://travis-ci.org/inputmice/Conversations)
 
 #### How do I update/add external libraries?
 
@@ -461,4 +465,4 @@ Play Store version or the current HEAD. If you are having problems connecting to
 your XMPP server your file transfer doesn’t work as expected please always
 include a logcat debug output with your issue (see above).
 
-[issues]: https://github.com/siacs/Conversations/issues
+[issues]: https://github.com/inputmice/Conversations/issues
