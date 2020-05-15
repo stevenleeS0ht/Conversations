@@ -369,7 +369,7 @@ public class ManageAccountActivity extends XmppActivity implements OnAccountUpda
     }
 
     private void deleteAccount(final Account account) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(getString(R.string.mgmt_account_are_you_sure));
         builder.setIconAttribute(android.R.attr.alertDialogIcon);
         builder.setMessage(getString(R.string.mgmt_account_delete_confirm_text));
@@ -408,15 +408,15 @@ public class ManageAccountActivity extends XmppActivity implements OnAccountUpda
     }
 
     @Override
-    public void alias(String alias) {
+    public void alias(final String alias) {
         if (alias != null) {
             xmppConnectionService.createAccountFromKey(alias, this);
         }
     }
 
     @Override
-    public void onAccountCreated(Account account) {
-        Intent intent = new Intent(this, EditAccountActivity.class);
+    public void onAccountCreated(final Account account) {
+        final Intent intent = new Intent(this, EditAccountActivity.class);
         intent.putExtra("jid", account.getJid().asBareJid().toString());
         intent.putExtra("init", true);
         startActivity(intent);

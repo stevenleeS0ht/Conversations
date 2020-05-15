@@ -650,8 +650,7 @@ public class JingleRtpConnection extends AbstractJingleConnection implements Web
         } catch (final WebRTCWrapper.InitializationException e) {
             Log.d(Config.LOGTAG, id.account.getJid().asBareJid() + ": unable to initialize WebRTC");
             webRTCWrapper.close();
-            //todo we haven’t actually initiated the session yet; so sending sessionTerminate makes no sense
-            //todo either we don’t ring ever at all or maybe we should send a retract or something
+            sendJingleMessage("retract", id.with.asBareJid());
             transitionOrThrow(State.TERMINATED_APPLICATION_FAILURE);
             this.finish();
             return;
@@ -668,6 +667,7 @@ public class JingleRtpConnection extends AbstractJingleConnection implements Web
             if (isInState(targetState)) {
                 sendSessionTerminate(Reason.FAILED_APPLICATION);
             } else {
+                sendJingleMessage("retract", id.with.asBareJid());
                 transitionOrThrow(State.TERMINATED_APPLICATION_FAILURE);
                 this.finish();
             }
@@ -1060,6 +1060,9 @@ public class JingleRtpConnection extends AbstractJingleConnection implements Web
         return webRTCWrapper.isVideoEnabled();
     }
 
+    public void setVideoEnabled(final boolean enabled) {
+        webRTCWrapper.setVideoEnabled(enabled);
+    }
 
     public boolean isCameraSwitchable() {
         return webRTCWrapper.isCameraSwitchable();
@@ -1071,10 +1074,6 @@ public class JingleRtpConnection extends AbstractJingleConnection implements Web
 
     public ListenableFuture<Boolean> switchCamera() {
         return webRTCWrapper.switchCamera();
-    }
-
-    public void setVideoEnabled(final boolean enabled) {
-        webRTCWrapper.setVideoEnabled(enabled);
     }
 
     @Override
@@ -1145,7 +1144,7 @@ public class JingleRtpConnection extends AbstractJingleConnection implements Web
                         }
                     }
                 }
-                List<PeerConnection.IceServer> iceServers = listBuilder.build();
+                final List<PeerConnection.IceServer> iceServers = listBuilder.build();
                 if (iceServers.size() == 0) {
                     Log.w(Config.LOGTAG, id.account.getJid().asBareJid() + ": no ICE server found " + response);
                 }
