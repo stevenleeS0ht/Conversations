@@ -28,7 +28,7 @@ import eu.siacs.conversations.services.XmppConnectionService;
 import eu.siacs.conversations.utils.InstallReferrerUtils;
 import eu.siacs.conversations.utils.SignupUtils;
 import eu.siacs.conversations.utils.XmppUri;
-import rocks.xmpp.addr.Jid;
+import eu.siacs.conversations.xmpp.Jid;
 
 import static eu.siacs.conversations.utils.PermissionUtils.allGranted;
 import static eu.siacs.conversations.utils.PermissionUtils.writeGranted;
@@ -62,7 +62,7 @@ public class WelcomeActivity extends XmppActivity implements XmppConnectionServi
             if (xmppUri.isAction(XmppUri.ACTION_REGISTER)) {
                 intent = SignupUtils.getTokenRegistrationIntent(this, jid, preauth);
             } else if (xmppUri.isAction(XmppUri.ACTION_ROSTER) && "y".equals(xmppUri.getParameter("ibr"))) {
-                intent = SignupUtils.getTokenRegistrationIntent(this, Jid.ofDomain(jid.getDomain()), preauth);
+                intent = SignupUtils.getTokenRegistrationIntent(this, jid.getDomain(), preauth);
                 intent.putExtra(StartConversationActivity.EXTRA_INVITE_URI, xmppUri.toString());
             } else {
                 intent = null;
