@@ -5,17 +5,14 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
-import android.support.annotation.DimenRes;
+import androidx.annotation.DimenRes;
 import android.widget.ImageView;
 
 import java.lang.ref.WeakReference;
 import java.util.concurrent.RejectedExecutionException;
 
-import eu.siacs.conversations.entities.Account;
 import eu.siacs.conversations.services.AvatarService;
 import eu.siacs.conversations.ui.XmppActivity;
-import eu.siacs.conversations.ui.adapter.AccountAdapter;
-import eu.siacs.conversations.utils.UIHelper;
 
 public class AvatarWorkerTask extends AsyncTask<AvatarService.Avatarable, Void, Bitmap> {
     private final WeakReference<ImageView> imageViewReference;

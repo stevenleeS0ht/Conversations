@@ -36,9 +36,9 @@ import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.os.Build;
 import android.preference.PreferenceManager;
-import android.support.annotation.StyleRes;
-import android.support.design.widget.Snackbar;
-import android.support.v4.content.ContextCompat;
+import androidx.annotation.StyleRes;
+import com.google.android.material.snackbar.Snackbar;
+import androidx.core.content.ContextCompat;
 import android.util.TypedValue;
 import android.widget.TextView;
 

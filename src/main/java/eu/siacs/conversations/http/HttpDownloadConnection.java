@@ -1,7 +1,7 @@
 package eu.siacs.conversations.http;
 
 import android.os.PowerManager;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.util.Log;
 
 import com.google.common.io.ByteStreams;
@@ -32,7 +32,6 @@ import eu.siacs.conversations.utils.CryptoHelper;
 import eu.siacs.conversations.utils.FileWriterException;
 import eu.siacs.conversations.utils.WakeLockHelper;
 import eu.siacs.conversations.xmpp.stanzas.IqPacket;
-import eu.siacs.conversations.xmpp.Jid;
 
 public class HttpDownloadConnection implements Transferable {
 
